@@ -5,6 +5,8 @@ const code = require('./code');
 const client = new Client(config);
 client.auth.setCode(code);
 
-const status = await client.connection.connect();
+(async () => {
+    const status = await client.connection.connect();
 
-console.log({ status });
+    console.log({ status });
+})();
